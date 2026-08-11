@@ -123,3 +123,16 @@ public class Solution {
 (OUTPUT)=>Hello world
 I am learning Java
 HackerRank is useful.
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Print output to STDOUT. Your class should be named Solution. */
+        {
+        
+        System.out.println("Hello, World.");
+        System.out.println("Hello, Java.");       
+    }
+}
+(OUTPUT)=>Hello, World.
+Hello, Java.
+}
