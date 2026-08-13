@@ -174,3 +174,37 @@ public class Solution {
         scan.close();
     }}
 (OUTPUT)=>
+Day-7.
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+
+        if (s.trim().isEmpty()) {
+            System.out.println(0);
+        } else {
+            String[] tokens = s.trim().split("[ !,?._'@]+");
+
+            System.out.println(tokens.length);
+
+            for (String token : tokens) {
+                System.out.println(token);
+            }
+        }
+
+        sc.close();
+    }
+}
+(OUTPUT)=>10
+He
+is
+a
+very
+very
+good
+boy
+isn
+t
+he
