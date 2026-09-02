@@ -1330,6 +1330,46 @@ Louis
 Samantha
 Tina.
 
+Day-27.
+import java.util.*;
+import java.text.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
+
+        // Create currency formatters
+        NumberFormat us = NumberFormat.getCurrencyInstance(Locale.US);
+        
+        Locale indiaLocale = new Locale("en", "IN");
+        NumberFormat india = NumberFormat.getCurrencyInstance(indiaLocale);
+        
+        NumberFormat china = NumberFormat.getCurrencyInstance(Locale.CHINA);
+        
+        NumberFormat france = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+
+        // Print formatted currency
+        System.out.println("US: " + us.format(payment));
+        System.out.println("India: " + india.format(payment));
+        System.out.println("China: " + china.format(payment));
+        System.out.println("France: " + france.format(payment));
+    }
+}
+
+(OUTPUT)=>Compiler Message
+Success
+Input (stdin)
+12324.134
+Expected Output
+US: $12,324.13
+India: Rs.12,324.13
+China: ￥12,324.13
+France: 12 324,13 €.
+
 
 
 
