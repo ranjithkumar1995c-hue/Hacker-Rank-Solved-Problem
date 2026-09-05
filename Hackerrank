@@ -1474,6 +1474,45 @@ Expected Output
 Lily.
 
 Day-30.
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+
+        // Remove non-alphabetic characters from beginning and end
+        s = s.replaceAll("^[^A-Za-z]+|[^A-Za-z]+$", "");
+
+        // If there are no tokens
+        if (s.length() == 0) {
+            System.out.println(0);
+        } else {
+
+            String[] tokens = s.split("[^A-Za-z]+");
+
+            System.out.println(tokens.length);
+
+            for (String token : tokens) {
+                System.out.println(token);
+            }
+        }
+
+        scan.close();
+    }
+}
+(OUTPUT)=>8
+YES
+leading
+spaces
+are
+valid
+problemsetters
+are
+evillllll.
 
 
 
