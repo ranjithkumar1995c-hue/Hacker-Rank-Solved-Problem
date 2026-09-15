@@ -2273,7 +2273,116 @@ Spend: 40
 Budget Left: 60
 BlogScoringEnvironmentFAQAbout UsHelpdeskCareersTerms Of ServicePrivacy Policy.
 
+Day-40.
+import java.io.*;
+import java.util.*;
 
+interface PerformOperation {
+    boolean check(int a);
+}
+
+class MyMath {
+
+    public static PerformOperation isOdd() {
+        return new PerformOperation() {
+            public boolean check(int a) {
+                return a % 2 != 0;
+            }
+        };
+    }
+
+    public static PerformOperation isPrime() {
+        return new PerformOperation() {
+            public boolean check(int a) {
+
+                if (a < 2) {
+                    return false;
+                }
+
+                for (int i = 2; i * i <= a; i++) {
+                    if (a % i == 0) {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        };
+    }
+
+    public static PerformOperation isPalindrome() {
+        return new PerformOperation() {
+            public boolean check(int a) {
+
+                int original = a;
+                int reverse = 0;
+
+                while (a > 0) {
+                    int digit = a % 10;
+                    reverse = reverse * 10 + digit;
+                    a = a / 10;
+                }
+
+                return original == reverse;
+            }
+        };
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) throws Exception {
+
+        BufferedReader br = new BufferedReader(
+            new InputStreamReader(System.in)
+        );
+
+        int T = Integer.parseInt(br.readLine());
+
+        while (T-- > 0) {
+
+            String[] input = br.readLine().split(" ");
+
+            int condition = Integer.parseInt(input[0]);
+            int number = Integer.parseInt(input[1]);
+
+            PerformOperation operation;
+
+            if (condition == 1) {
+
+                operation = MyMath.isOdd();
+
+                if (operation.check(number)) {
+                    System.out.println("ODD");
+                } else {
+                    System.out.println("EVEN");
+                }
+
+            } else if (condition == 2) {
+
+                operation = MyMath.isPrime();
+
+                if (operation.check(number)) {
+                    System.out.println("PRIME");
+                } else {
+                    System.out.println("COMPOSITE");
+                }
+
+            } else if (condition == 3) {
+
+                operation = MyMath.isPalindrome();
+
+                if (operation.check(number)) {
+                    System.out.println("PALINDROME");
+                } else {
+                    System.out.println("NOT PALINDROME");
+                }
+            }
+        }
+    }
+}
+
+(OUTPUT)=>Even,Prime,Palindrome.
 
 
 
