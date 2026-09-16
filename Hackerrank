@@ -2384,6 +2384,34 @@ public class Solution {
 
 (OUTPUT)=>Even,Prime,Palindrome.
 
+Day-41.
+import java.io.*;
+import java.security.*;
+
+public class Solution {
+
+    public static void main(String[] args) throws Exception {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String input = br.readLine();
+
+        MessageDigest md = MessageDigest.getInstance("MD5");
+
+        byte[] hash = md.digest(input.getBytes());
+
+        for (byte b : hash) {
+            System.out.printf("%02x", b);
+        }
+    }
+}
+(OUTPUT)=>Compiler Message
+Success
+Input (stdin)
+HelloWorld
+Expected Output
+68e109f0f40ca72a15e05cc22786f8e6.
+
 
 
 
