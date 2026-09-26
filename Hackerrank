@@ -2886,6 +2886,63 @@ I implemented: AdvancedArithmetic
 12.
 
 
+Day-51.
+
+
+import java.io.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+
+        int testCases = Integer.parseInt(in.nextLine());
+
+        while (testCases > 0) {
+
+            String line = in.nextLine();
+
+            Pattern pattern = Pattern.compile("<([^<>]+)>([^<>]+)</\\1>");
+            Matcher matcher = pattern.matcher(line);
+
+            boolean found = false;
+
+            while (matcher.find()) {
+                System.out.println(matcher.group(2));
+                found = true;
+            }
+
+            if (!found) {
+                System.out.println("None");
+            }
+
+            testCases--;
+        }
+
+        in.close();
+    }
+}
+
+
+
+(OUTPUT)=>Compiler Message
+Success
+Input (stdin)
+4
+<h1>Nayeem loves counseling</h1>
+<h1><h1>Sanjay has no watch</h1></h1><par>So wait for a while<par>
+<Amee>safat codes like a ninja</amee>
+<SA premium>Imtiaz has a secret crash</SA premium>
+Expected Output
+Nayeem loves counseling
+Sanjay has no watch
+None
+
+
+
 
 
 
