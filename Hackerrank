@@ -4054,3 +4054,34 @@ Generic Sports
 Each team has n players in Generic Sports
 Soccer Class
 Each team has 11 players in Soccer Class.
+
+
+Day-82.
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String A = sc.next();
+
+        String reverse = new StringBuilder(A).reverse().toString();
+
+        if (A.equals(reverse)) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+
+        sc.close();
+    }
+}
+
+
+(OUTPUT)=>
+Compiler Message
+Success
+Input (stdin)
+madam
+Expected Output
+Yes.
